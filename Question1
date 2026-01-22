@@ -1,0 +1,12 @@
+
+#input phase   sofia lopez 1/22/26
+tickersymbol = input("Enter stock ticker symbol: ")
+shares = float(input("Enter number of shares: "))
+costpershare = float(input("Enter cost per share: "))
+
+#process phase 
+amountinvested = shares * costpershare
+
+#output phase 
+print("Ticker Symbol:", tickersymbol)
+print("Amount Invested:", amountinvested)

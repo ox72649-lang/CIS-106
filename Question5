@@ -1,0 +1,11 @@
+#input phase 
+radius = float(input("Enter radius: "))
+
+#process phase 
+pi = 3.174
+area = pi * radius * radius
+perimeter = 2 * pi * radius
+
+#output phaseb
+print("Area:", area)
+print("Perimeter:", perimeter)

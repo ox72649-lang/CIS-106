@@ -1,0 +1,8 @@
+#input phase 
+totalamount = float(input("Enter total amount received: "))
+
+#process phase 
+eachperson = totalamount / 3
+
+#input phase 
+print("Each person receives:", eachperson)
