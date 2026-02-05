@@ -1,11 +1,16 @@
-#input phase    sofia lopez 1/22/26
-lname = input("Enter Students Last Name")
-Midterm = float(input("Enter midterm score"))
-Final = float (input("Enter final exam score"))
+#input phase    sofia lopez 1/26/26 
+itemcd = input("Enter item (A or B): ")
+quantit = int(input("Enter quantity: "))
 
-#process phase
-total = Midterm + Final 
+#process phase 
+if itemcd == "A":
+    unitprc = 10.00
+else:
+    unitprc = 20.00
 
-#output phase
-print("Student:  ",   lname)
-print ("Total points earned", total )
+extprc = quantit * unitprc
+
+#output phase 
+print("Item:", itemcd)
+print("Unit Price:", unitprc)
+print("Extended Price:", extprc)

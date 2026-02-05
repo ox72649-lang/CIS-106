@@ -1,8 +1,15 @@
-#input phase 
-totalamount = float(input("Enter total amount received: "))
+#input phase    sofia lopez 1/26/26
+bookct = int(input("Enter number of books: "))
+bookprc = float(input("Enter cost per book: "))
 
 #process phase 
-eachperson = totalamount / 3
+ordertt = bookct * bookprc
 
-#input phase 
-print("Each person receives:", eachperson)
+if ordertt > 50.00:
+    shipcg = 0.00
+else:
+    shipcg = 25.00
+
+#output phase 
+print("Order Total:", ordertt)
+print("Shipping Charge:", shipcg)
