@@ -1,16 +1,27 @@
-#input phase    sofia lopez 1/26/26 
-itemcd = input("Enter item (A or B): ")
-quantit = int(input("Enter quantity: "))
+#input phase    sofia lopez 02/05/26
 
-#process phase 
-if itemcd == "A":
-    unitprc = 10.00
+part_number = input("Enter part number: ")
+quantity_amt = int(input("Enter quantity: "))
+unit_cost = 0
+total_cost = 0
+display_part = part_number
+cost_label = ""
+
+#process Phase
+
+if part_number == "10" or part_number == "55":
+    unit_cost = 1.00
+elif part_number == "99":
+    unit_cost = 2.00
+elif part_number == "80" or part_number == "70":
+    unit_cost = 3.00
 else:
-    unitprc = 20.00
+    unit_cost = 5.00
 
-extprc = quantit * unitprc
+total_cost = quantity_amt * unit_cost
 
 #output phase 
-print("Item:", itemcd)
-print("Unit Price:", unitprc)
-print("Extended Price:", extprc)
+
+print("Part Number:", display_part)
+print("Cost per Unit:", unit_cost)
+print("Total Cost:", total_cost)

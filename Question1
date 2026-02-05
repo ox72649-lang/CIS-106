@@ -1,19 +1,27 @@
-#input phase    sofia lopez 1/26/26
-quantit = int(input("Enter quantity: "))
+#input phase    sofia lopez 02/05/26
 
-if quantit >= 1000:
-    unitprc = 3.00
-else:
-    unitprc = 5.00
+widget_qty = int(input("Enter quantity of widgets: "))
+unit_price = 0
+extended_price = 0
+tax_rate = 0.07
+tax_amount = 0
+total_price = 0
 
 #process phase
-extprc = quantit * unitprc
-taxamt = extprc * 0.07
-totamt = extprc + taxamt
 
-#output phase 
-print("Quantity:", quantit)
-print("Unit Price:", unitprc)
-print("Extended Price:", extprc)
-print("Tax Amount:", taxamt)
-print("Total Amount:", totamt)
+if widget_qty > 10000:
+    unit_price = 10
+elif widget_qty >= 5000:
+    unit_price = 20
+else:
+    unit_price = 30
+
+extended_price = widget_qty * unit_price
+tax_amount = extended_price * tax_rate
+total_price = extended_price + tax_amount
+
+#output phase
+
+print("Extended Price:", extended_price)
+print("Tax Amount:", tax_amount)
+print("Total Price:", total_price)
