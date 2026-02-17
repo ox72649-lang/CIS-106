@@ -1,0 +1,28 @@
+#input phase    sofia lopez 02/07/26
+
+principle_amt = float(input("Enter principle amount: "))
+maturity_years = int(input("Enter years to maturity: "))
+interest_rate = 0
+interest_amt = 0
+rate_percent = 0
+display_principle = principle_amt
+
+#process phase
+
+if principle_amt > 100000 and maturity_years == 5:
+    interest_rate = 0.06
+elif principle_amt >= 50000 and principle_amt <= 100000 and maturity_years == 10:
+    interest_rate = 0.05
+elif principle_amt >= 50000 and principle_amt <= 100000 and maturity_years == 5:
+    interest_rate = 0.04
+else:
+    interest_rate = 0.02
+
+interest_amt = principle_amt * interest_rate
+rate_percent = interest_rate * 100
+
+#output phase 
+
+print("Principle Amount:", display_principle)
+print("Interest Rate:", rate_percent, "%")
+print("First Year Interest:", interest_amt)

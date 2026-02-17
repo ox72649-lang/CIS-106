@@ -1,0 +1,24 @@
+#input phase    sofia lopez 02/08/26
+
+employee_lastname = input("Enter employee last name: ")
+employee_salary = float(input("Enter employee salary: "))
+job_levelcode = int(input("Enter job level: "))
+bonus_ratepct = 0
+bonus_amount = 0
+display_name = employee_lastname
+
+#process phase
+
+if job_levelcode >= 10:
+    bonus_ratepct = 0.25
+elif job_levelcode >= 5:
+    bonus_ratepct = 0.20
+else:
+    bonus_ratepct = 0.10
+
+bonus_amount = employee_salary * bonus_ratepct
+
+#output phase
+
+print("Employee Last Name:", display_name)
+print("Bonus Amount: $", bonus_amount)
