@@ -1,44 +1,28 @@
-#input phase    sofia lopez 2/12/26
+#input phase    sofia lopez 02/08/26 
 
-continuev = input("Do you want to enter employee data? (Yes to continue): ")
-employeec = 0
-totalgross = 0.0
+ticket_count = int(input("Enter number of concert tickets: "))
+ticket_price = 0
+total_costs = 0
+display_count = ticket_count
+price_label = ""
+calculated_total = 0
 
-#prcoess phase
+#process phase 
 
-while continuev == "Yes":
-    lastnamev = input("Enter employee last name: ")
-    hourswork = float(input("Enter hours worked: "))
-    payratev = float(input("Enter rate of pay: "))
-
-    # calculate gross pay with overtime
-    if hourswork > 40:
-        overtimehr = hourswork - 40
-        grosspayv = (40 * payratev) + (overtimehr * payratev * 1.5)
-    else:
-        grosspayv = hourswork * payratev
-
-    # update totals
-    totalgross = totalgross + grosspayv
-    employeec = employeec + 1
-
-    
-    # output phase (per employee) 
-    # --------------------
-    print("Employee Last Name:", lastnamev)
-    print("Gross Pay:", grosspayv)
-
-    # second prompt INSIDE the loop
-    continuev = input("Do you want to enter another employee? (Yes to continue): ")
-
-
-# final output (after loop)
-
-if employeec > 0:
-    averagepay = totalgross / employeec
+if ticket_count >= 25:
+    ticket_price = 50
+elif ticket_count >= 10:
+    ticket_price = 60
+elif ticket_count >= 5:
+    ticket_price = 70
 else:
-    averagepay = 0
+    ticket_price = 75
 
-print("Total Gross Pay:", totalgross)
-print("Number of Employees:", employeec)
-print("Average Pay:", averagepay)
+calculated_total = ticket_count * ticket_price
+total_costs = calculated_total
+
+#output phase
+
+print("Number of Tickets:", display_count)
+print("Price Per Ticket: $", ticket_price)
+print("Total Cost: $", total_costs)

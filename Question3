@@ -1,27 +1,28 @@
-#input phase   sofia lopez 2/13/26
+#input phase    sofia lopez 02/07/26
 
-continuev = input("Do you want to enter student data? (Yes to continue): ")
-studentct = 0
+principle_amt = float(input("Enter principle amount: "))
+maturity_years = int(input("Enter years to maturity: "))
+interest_rate = 0
+interest_amt = 0
+rate_percent = 0
+display_principle = principle_amt
 
 #process phase
 
-while continuev == "Yes":
-    lastnamev = input("Enter student's last name: ")
-    examscore1 = float(input("Enter first exam score: "))
-    examscore2 = float(input("Enter second exam score: "))
+if principle_amt > 100000 and maturity_years == 5:
+    interest_rate = 0.06
+elif principle_amt >= 50000 and principle_amt <= 100000 and maturity_years == 10:
+    interest_rate = 0.05
+elif principle_amt >= 50000 and principle_amt <= 100000 and maturity_years == 5:
+    interest_rate = 0.04
+else:
+    interest_rate = 0.02
 
-    averageex = (examscore1 + examscore2) / 2
-    studentct = studentct + 1
- 
-    # output phase
+interest_amt = principle_amt * interest_rate
+rate_percent = interest_rate * 100
 
-    print("Last Name:", lastnamev)
-    print("Average Score:", averageex)
+#output phase 
 
-    # prompt again at bottom of loop
-    continuev = input("Do you want to enter another student? (Yes to continue): ")
-
-
-# final output (after the loop)
-
-print("Total number of students entered:", studentct)
+print("Principle Amount:", display_principle)
+print("Interest Rate:", rate_percent, "%")
+print("First Year Interest:", interest_amt)
