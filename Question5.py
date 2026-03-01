@@ -1,0 +1,42 @@
+#input phase    sofia lopez 2/13/26
+
+continuev = input("Do you want to enter an order? (Yes to continue): ")
+totaldisc = 0.0
+
+
+#process phase
+
+while continuev == "Yes":
+    quantityv = float(input("Enter quantity: "))
+    priceitem = float(input("Enter price per item: "))
+
+    # compute extended price
+    extendedp = quantityv * priceitem
+
+    # determine discount rate
+    if extendedp > 10000.00:
+        discountr = 0.25
+    else:
+        discountr = 0.10
+
+    # compute discount and total
+    discounta = extendedp * discountr
+    totalprice = extendedp - discounta
+
+    # accumulate total discounts
+    totaldisc = totaldisc + discounta
+
+   
+    #output phase (per order)
+    
+    print("Extended Price:", extendedp)
+    print("Discount Amount:", discounta)
+    print("Total After Discount:", totalprice)
+
+    # second prompt INSIDE the loop
+    continuev = input("Do you want to enter another order? (Yes to continue): ")
+
+
+# final output (after the loop) 
+
+print("Total of All Discounts:", totaldisc)
